@@ -16,7 +16,7 @@ function Navbar() {
                         </div>
                         <div className='brand'>
                             <img src="/src/assets/perro.jpg" alt="perro" className='logo'/>
-                            <span className='name'>apex</span>
+                            <span className='name'>Gestión de patas al rescate</span>
                         </div>
                     </div>
                     <div className="right">

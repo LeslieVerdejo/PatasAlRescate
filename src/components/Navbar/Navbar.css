@@ -8,7 +8,7 @@ header {
     padding: 0.45rem 2rem 0.45rem 1.27rem;
     border-bottom: 1px solid black;
     position: fixed;
-    background-color: aqua;
+    background-color: rgb(28, 32, 36);
     top: 0;
     left: 0;
 }
@@ -38,7 +38,7 @@ header {
 .menu div{
     width: 100%;
     height: 0.15rem;
-    background-color: blue;
+    background-color: white;
 }
 
 .brand{
@@ -55,7 +55,7 @@ header {
 .brand .name{
     font-size: 1.5rem;
     font-weight: 900;
-    color: aquamarine;
+    color: white;
 }
 
 .right {
@@ -75,7 +75,8 @@ header {
 }
 
 .right a:hover{
-    background-color: brown;
+    background-color: whitesmoke;
+    opacity: 80%;
 
 }
 
@@ -99,9 +100,9 @@ header {
     left: 0;
     z-index: 100;
     padding: 1.1rem 0;
-    border-right: 1px solid red;
+    border-right: 1px solid gainsborbo;
     overflow-y: auto;
-    background-color: blueviolet;
+    background-color: rgb(40, 46, 51);
 }
 
 .sidebar a{
@@ -114,21 +115,21 @@ header {
     border-radius: 0.5rem;
     white-space: nowrap;
     overflow: hidden;
-    color: black;
+    color: rgb(207, 207, 207);
 }
 
 .sidebar a:hover{
-    background-color: violet;
+    background-color: rgba(158, 157, 157, 0.281);
 }
 
-.sidebar a.selected{
+/* .sidebar a.selected{
     color: blue;
     background-color: chartreuse;
-}
+} */
 
 .sidebar a.search{
     padding: 1rem 0.7rem;
-    border-bottom: 1px solid saddlebrown;
+    border-bottom: 1px solid gray;
     margin-bottom: 0.2rem;
 }
 
