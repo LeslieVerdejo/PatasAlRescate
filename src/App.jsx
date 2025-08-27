@@ -8,8 +8,8 @@ import Navbar from "./components/Navbar/Navbar";
 function App() {
   return (
     <>
-      {/* <Login /> */}
-      <Navbar/>
+      <Login />
+      {/* <Navbar/> */}
     </>
   );
 }

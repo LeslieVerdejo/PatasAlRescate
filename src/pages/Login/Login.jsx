@@ -1,30 +1,37 @@
 import React, { useState } from "react";
-
+import { ToastContainer, toast } from "react-toastify";
 
 function Login() {
-    
-    const [usuario, setUsuarios] = useState("")
-    const [password, setPassword] = useState("")
+  const [usuario, setUsuarios] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState(false);
 
-function validarDatos(e) {
-    e.preventDefault()
-    if(usuario === "") {
-        alert("El usuario esta vacio")
-    } else if(password === "") {
-        alert("La contraseña esta vacia")
+  function validarDatos(e) {
+    e.preventDefault();
+
+    if (usuario === "" && password === "") {
+      setError("Recuerda agregar tus datos.");
+      toast.error("Los campos estan vacios");
+    } else if (password === "") {
+      setError("Recuerda agregar tu contraseña.");
+      toast.error("La contraseña esta vacia");
+    } else if (usuario === "") {
+      setError("Recuerda agregar tu usuario.");
+      toast.error("El usuario esta vacio");
     } else {
-        alert("Bienvenido")
+      setError(false);
+      toast.success("Datos correctos, iniciando sesión...");
     }
-}
+  }
 
   return (
     <form>
-        <div className="">
-            <h1 className="pb-3">Bienvenido</h1>
-        </div>
+      <div className="">
+        <h1 className="pb-3">Bienvenido</h1>
+      </div>
       <div className="input-group mb-3">
         <span className="input-group-text" id="basic-addon1">
-           🐶
+          🐶
         </span>
         <input
           type="text"
@@ -51,8 +58,19 @@ function validarDatos(e) {
         />
       </div>
       <div className="mt-3">
-        <button onClick={validarDatos}  className="btn btn-primary">Ingresar</button>
+        {error && <p style={{ color: "red", fontWeight: "bold" }}>{error}</p>}
+        <button onClick={validarDatos} className="btn btn-primary">
+          Ingresar
+        </button>
       </div>
+      <ToastContainer
+        // position="top-center"
+        autoClose={3000}
+        // hideProgressBar
+        theme="dark"
+        closeOnClick
+        pauseOnHover
+      />
     </form>
   );
 }
