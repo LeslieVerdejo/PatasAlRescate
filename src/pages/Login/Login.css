@@ -1,0 +1,16 @@
+.form-principal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: rgb(47, 97, 141);
+}
+
+.inputT{
+    max-width: 300px;
+}
+
+.card-principal {
+    background-color: aliceblue;
+}

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
+// import { imagenLogin } from "../../assets/imgLogin.png";
+import "./Login.css";
 
 function Login() {
   const [usuario, setUsuarios] = useState("");
@@ -25,11 +27,11 @@ function Login() {
   }
 
   return (
-    <form>
-      <div className="">
+    <form className="form-principal">
+      <div className="titulo">
         <h1 className="pb-3">Bienvenido</h1>
       </div>
-      <div className="input-group mb-3">
+      <div className="input-group mb-3 inputT">
         <span className="input-group-text" id="basic-addon1">
           🐶
         </span>
@@ -43,7 +45,7 @@ function Login() {
           onChange={(e) => setUsuarios(e.target.value)}
         />
       </div>
-      <div className="input-group flex-nowrap">
+      <div className="input-group flex-nowrap inputT">
         <span className="input-group-text" id="addon-wrapping">
           🔐
         </span>
@@ -57,7 +59,7 @@ function Login() {
           onChange={(e) => setPassword(e.target.value)}
         />
       </div>
-      <div className="mt-3">
+      <div className="mt-3 pt-3">
         {error && <p style={{ color: "red", fontWeight: "bold" }}>{error}</p>}
         <button onClick={validarDatos} className="btn btn-primary">
           Ingresar
