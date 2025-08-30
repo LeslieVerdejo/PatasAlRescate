@@ -4,7 +4,7 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import Login from "./pages/Login/Login";
 import Navbar from "./components/Navbar/Navbar";
-import Empleados from "./pages/Empleados/Empleados";
+import Register from "./pages/Register/Register";
 
 function App() {
   return (
