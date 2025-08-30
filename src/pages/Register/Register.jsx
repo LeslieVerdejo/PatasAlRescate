@@ -32,22 +32,28 @@ function Register() {
     } else if (password === "") {
       setError("Recuerda ingresar tu contraseña.");
       toast.error("La contraseña está vacía");
+    } else if (password.length < 6) {
+      setError("Tu contraseña debe tener al menos 6 caracteres.");
+      toast.error("La contraseña está vacía");
     } else if (password2 === "") {
       setError("Recuerda agregar nuevamente tu contraseña.");
       toast.error("La contraseña está vacía");
+      } else if (password !== password2) {
+      setError("Tu contraseña no coincide.");
+      toast.error("La contraseña está vacía");
     } else {
       setError(false);
-      toast.success("Datos correctos, iniciando sesión...");
+      toast.success("Datos correctos, cuenta creada exitosamente...");
     }
   }
 
   return (
-    <div className="login-container">
-      <div className="login-image">
-        <img src={imagenLogin} alt="Login" />
+    <div className="register-container">
+      <div className="register-image">
+        <img src={imagenLogin} alt="register" />
       </div>
-      <div className="login-right">
-        <form className="login-form" onSubmit={validarDatos}>
+      <div className="register-right">
+        <form className="register-form" onSubmit={validarDatos}>
           <h1 className="titulo">Registra tu cuenta</h1>
           <div className="input-group mb-3 inputT">
             <span className="input-group-text">📊</span>
