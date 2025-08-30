@@ -1,18 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./Navbar.css"
 
 function Navbar() {
+
+    const [ menu , setMenu ] = useState( false )
+
+    const toggleMenu = () => {
+        setMenu( !menu)
+    }
+
     return (
         <div>
             <>
                 <header>
                     <div className="left">
                         <div className='menu-container'>
+                            <button className='boton p-2' onClick={ toggleMenu}>
                             <div className='menu'>
-                                <div></div>
-                                <div></div>
-                                <div></div>
+                                <div className='blanco'></div>
+                                <div className='negro'></div>
+                                <div className='blanco'></div>
+                                <div className='negro'></div>
+                                <div className='blanco'></div>
                             </div>
+                            </button>
                         </div>
                         <div className='brand'>
                             <img src="/src/assets/perro.jpg" alt="perro" className='logo'/>
@@ -32,7 +43,7 @@ function Navbar() {
                         <img src="/src/assets/perro.jpg" alt="aca-va-el-user" className='user'/>
                     </div>
                 </header>
-                <div className='sidebar'>
+                <div className={`sidebar ${menu ? 'isActive' : ''}`}>
                     <nav>
                             <li>
                                 <a href="#" className='search'>
