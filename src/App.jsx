@@ -10,8 +10,9 @@ function App() {
   return (
     <>
       {/* <Login /> */}
-      {/* <Navbar /> */}
-      <Empleados />
+      <Navbar />
+      {/* <Register /> */}
+      {/* <Empleados /> */}
     </>
   );
 }
