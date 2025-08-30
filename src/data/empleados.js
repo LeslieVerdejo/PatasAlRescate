@@ -17,6 +17,15 @@ const empleados = [
     usuario: "lesby",
     salario: "$2.500.00",
   },
+  {
+    id: "3",
+    nombre: "Harold",
+    apellido: "Deneken",     
+    correo: "deneken@gmail.com",
+    cargo: "Lider Tecnico",
+    usuario: "deneken",
+    salario: "$5.500.00",
+  },
 ];
 
 export default empleados; 
