@@ -29,7 +29,7 @@ function Navbar() {
                         <div className='menu-container'>
                             <button className='boton p-2' onClick={ toggleMenu}>
                             <div className='menu'>
-                                <img src={imagenUser} alt="User" className='usuario'/>
+                                <i class="fa-solid fa-bars"></i>
                             </div>
                             </button>
                         </div>
@@ -56,38 +56,38 @@ function Navbar() {
                 <div className={`sidebar ${menu ? 'isActive' : ''}`}>
                     <nav>
                         <li>
-                            <a href="#" className='search'>
-                                <img src={imagenEmpleados} alt="User" className='icono'/>
+                            <a href="#">
+                                <i class="fa-solid fa-users"></i>
                                 <span>Empleados</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#" className='selected'>
-                                <img src={imagenDepartamentos} alt="User" className='icono'/>
+                            <a href="#">
+                                <i class="fa-solid fa-building"></i>
                                 <span>Departamentos</span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img src={imagenSalarios} alt="User" className='icono'/>
+                                <i class="fa-solid fa-money-bill"></i>
                                 <span>Salarios</span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img src={imagenLibres} alt="User" className='icono'/>
-                                <span>Libres</span>
+                                <i class="fa-solid fa-calendar-days"></i>
+                                <span>Horario</span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img src={imagenRegistros} alt="User" className='icono'/>
+                                <i class="fa-solid fa-chart-bar"></i>
                                 <span>Registros (Horas/Mes)</span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img src={imagenConfiguracion} alt="User" className='icono'/>
+                                <i class="fa-solid fa-gear"></i>
                                 <span>Configuración</span>
                             </a>
                         </li>
@@ -97,31 +97,31 @@ function Navbar() {
                     <nav>
                         <li>
                             <a href="#" className='search'>
-                                <img src="/src/assets/perro.jpg" alt="" />
+                                <i class="fa-solid fa-user"></i>
                                 <span>Ver cuenta</span>
                             </a>
                         </li>
                         <li>
                             <a href="#" className='selected'>
-                                <img src="/src/assets/perro.jpg" alt="" />
+                                <i class="fa-solid fa-unlock"></i>
                                 <span>Cambiar contraseña</span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img src="/src/assets/perro.jpg" alt="" />
+                                <i class="fa-solid fa-circle-info"></i>
                                 <span>Tutorial</span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img src="/src/assets/perro.jpg" alt="" />
+                                <i class="fa-solid fa-gear"></i>
                                 <span>Configuración</span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img src="/src/assets/perro.jpg" alt="" />
+                                <i class="fa-solid fa-right-from-bracket"></i>
                                 <span>Cerrar sesión</span>
                             </a>
                         </li>

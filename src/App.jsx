@@ -11,9 +11,9 @@ function App() {
   return (
     <>
       {/* <Login /> */}
-      {/* <Navbar /> */}
+      <Navbar />
       {/* <Register /> */}
-      <Empleados />
+      {/* <Empleados /> */}
     </>
   );
 }
