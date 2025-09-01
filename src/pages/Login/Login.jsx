@@ -25,7 +25,7 @@ function Login() {
     } else if (usuario === "admin" && password === "admin123") {
       setError(false);
       toast.success("Datos correctos, iniciando sesión...");
-      navigate("/");
+      navigate("/home");
     } else {
       setError("Usuario o contraseña incorrectos");
       toast.error("Usuario o contraseña incorrectos");

@@ -122,7 +122,7 @@ function Navbar() {
               </a>
             </li>
             <li>
-              <Link to="/login" className="logout">
+              <Link to="/" className="logout">
                 <i className="fa-solid fa-right-from-bracket"></i>
                 <span>Cerrar sesión</span>
               </Link>
