@@ -122,10 +122,10 @@ function Navbar() {
               </a>
             </li>
             <li>
-              <a href="#">
+              <Link to="/login">
                 <i className="fa-solid fa-right-from-bracket"></i>
                 <span>Cerrar sesión</span>
-              </a>
+              </Link>
             </li>
           </nav>
         </div>
