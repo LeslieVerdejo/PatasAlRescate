@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import imagenLogin from "../../assets/imgLogin.jpg";
 import "./Login.css";
+import { Link } from "react-router-dom";
 
 function Login() {
   const [usuario, setUsuarios] = useState("");

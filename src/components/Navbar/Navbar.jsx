@@ -122,7 +122,11 @@ function Navbar() {
               </a>
             </li>
             <li>
+<<<<<<< HEAD
               <Link to="/" className="logout">
+=======
+              <Link to="/login">
+>>>>>>> 8e45c2ded739a0008b7a242d4fa5111e95df3f3f
                 <i className="fa-solid fa-right-from-bracket"></i>
                 <span>Cerrar sesión</span>
               </Link>
