@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import imagenLogin from "../../assets/imgLogin.jpg";
 import "./Login.css";
@@ -7,9 +8,11 @@ function Login() {
   const [usuario, setUsuarios] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
+  const navigate = useNavigate();
 
   function validarDatos(e) {
     e.preventDefault();
+
     if (usuario === "" && password === "") {
       setError("Recuerda agregar tus datos.");
       toast.error("Los campos están vacíos");
@@ -19,9 +22,13 @@ function Login() {
     } else if (usuario === "") {
       setError("Recuerda agregar tu usuario.");
       toast.error("El usuario está vacío");
-    } else {
+    } else if (usuario === "admin" && password === "admin123") {
       setError(false);
       toast.success("Datos correctos, iniciando sesión...");
+      navigate("/");
+    } else {
+      setError("Usuario o contraseña incorrectos");
+      toast.error("Usuario o contraseña incorrectos");
     }
   }
 
