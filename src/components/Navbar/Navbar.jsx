@@ -96,13 +96,13 @@ function Navbar() {
                 <div className={`sidebar-menu ${menu2 ? 'isActive' : ''}`}>
                     <nav>
                         <li>
-                            <a href="#" className='search'>
+                            <a href="#">
                                 <i class="fa-solid fa-user"></i>
                                 <span>Ver cuenta</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#" className='selected'>
+                            <a href="#">
                                 <i class="fa-solid fa-unlock"></i>
                                 <span>Cambiar contraseña</span>
                             </a>
@@ -116,7 +116,7 @@ function Navbar() {
                         <li>
                             <a href="#">
                                 <i class="fa-solid fa-gear"></i>
-                                <span>Configuración</span>
+                                <span>Ayuda</span>
                             </a>
                         </li>
                         <li>

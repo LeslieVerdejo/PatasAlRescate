@@ -2,9 +2,32 @@ import "./Empleados.css";
 import Navbar from "../../components/Navbar/Navbar";
 import { useState } from "react";
 import dataEmpleados from "../../data/empleados";
+import ModalPage from "../../components/ModalPage/ModalPage";
 
 function Empleados() {
   const [empleados, setEmpleados] = useState(dataEmpleados);
+
+  const [show, setShow] = useState(false);
+  const [selectedEmpleado, setSelectedEmpleado] = useState(null);
+  const [accion, setAccion] = useState(""); // "ver" | "editar" | "eliminar"
+
+  const handleClose = () => {
+    setShow(false);
+    setSelectedEmpleado(null);
+    setAccion("");
+  };
+
+  const handleShow = (empleado, tipoAccion) => {
+    setSelectedEmpleado(empleado);
+    setAccion(tipoAccion);
+    setShow(true);
+  };
+
+  // Ejemplo para eliminar
+  const handleEliminar = (id) => {
+    setEmpleados(empleados.filter(emp => emp.id !== id));
+    handleClose();
+  };
 
   return (
     <>
@@ -13,7 +36,11 @@ function Empleados() {
         <div className="row">
           <div className="col-12 d-flex justify-content-between align-items-center">
             <h1 className="mb-3">Empleados</h1>
-            <button type="button" className="btn btn-primary">
+            <button 
+              type="button" 
+              className="btn btn-primary"
+              onClick={() => handleShow(null, "agregar")}
+            >
               <i className="fa-solid fa-user-plus"></i>
             </button>
           </div>
@@ -23,21 +50,21 @@ function Empleados() {
               <table className="table table-striped table-bordered">
                 <thead>
                   <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Apellido</th>
-                    <th scope="col">Correo</th>
-                    <th scope="col">Cargo</th>
-                    <th scope="col">Usuario</th>
-                    <th scope="col">Salario</th>
-                    <th scope="col">Acciones</th>
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Correo</th>
+                    <th>Cargo</th>
+                    <th>Usuario</th>
+                    <th>Salario</th>
+                    <th>Acciones</th>
                   </tr>
                 </thead>
 
                 <tbody>
                   {empleados.map((empleado) => (
                     <tr key={empleado.id}>
-                      <th scope="row">{empleado.id}</th>
+                      <th>{empleado.id}</th>
                       <td>{empleado.nombre}</td>
                       <td>{empleado.apellido}</td>
                       <td>{empleado.correo}</td>
@@ -48,16 +75,22 @@ function Empleados() {
                         <button
                           type="button"
                           className="btn btn-success btn-sm me-2"
+                          onClick={() => handleShow(empleado, "ver")}
                         >
                           <i className="fa-solid fa-vest"></i>
                         </button>
                         <button
                           type="button"
                           className="btn btn-warning btn-sm me-2"
+                          onClick={() => handleShow(empleado, "editar")}
                         >
                           <i className="fa-solid fa-pen-to-square"></i>
                         </button>
-                        <button type="button" className="btn btn-danger btn-sm">
+                        <button
+                          type="button"
+                          className="btn btn-danger btn-sm"
+                          onClick={() => handleShow(empleado, "eliminar")}
+                        >
                           <i className="fa-solid fa-trash"></i>
                         </button>
                       </td>
@@ -69,6 +102,15 @@ function Empleados() {
           </div>
         </div>
       </main>
+
+      {/* Pasamos los props necesarios */}
+      <ModalPage 
+        show={show} 
+        handleClose={handleClose}
+        accion={accion}
+        empleado={selectedEmpleado}
+        handleEliminar={handleEliminar}
+      />
     </>
   );
 }
